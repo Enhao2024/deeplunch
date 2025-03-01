@@ -1,12 +1,28 @@
-import { MenuConfig, MenuTitle } from '@/utils/MenuConfig';
 import {
-  Github, Coffee, DollarSign, Linkedin,
-} from '@geist-ui/icons';
-
+  LEFT_BAR_MENU, MenuConfig, MenuTitle, TOP_BAR_MENU,
+} from '@/utils/MenuConfig';
+import HamburgerProfile from './HamburgerProfile';
 import MenuLink from './MenuLink';
-import Timer from './Timer';
+import HamburgerFooterButton from './HamburgerFooterButton';
 
 function Hamburger() {
+  const renderMenu = () => [...LEFT_BAR_MENU, ...TOP_BAR_MENU].map((menu) => (
+    <li key={menu.href}>
+      <MenuLink
+        menuName={menu.title}
+        newPage={menu.href === MenuConfig[MenuTitle.GIT_REPO].href}
+      >
+        <button
+          type="button"
+          className="flex gap-4 w-full items-center rounded-lg py-1.5 px-3 hover:bg-base-200 font-bold"
+        >
+          <menu.icon />
+          <span>{menu.title}</span>
+        </button>
+      </MenuLink>
+    </li>
+  ));
+
   return (
     <div className="lg:hidden">
       <div className="drawer z-50">
@@ -24,55 +40,12 @@ function Hamburger() {
         <div className="drawer-side">
           <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay" />
           <div className="min-h-full bg-zinc-100 flex flex-col justify-between bg-opacity-95 backdrop-blur-md">
+            <HamburgerProfile />
             <ul className="menu text-base-content min-h-full w-72 px-6 py-12">
-              {/* Sidebar content here */}
-              <li key={MenuConfig[MenuTitle.GIT_REPO].href}>
-                <MenuLink menuName={MenuConfig[MenuTitle.GIT_REPO].title} newPage>
-                  <button
-                    type="button"
-                    className="flex gap-4 w-full items-center rounded-lg py-1.5 px-3 hover:bg-base-200 font-bold"
-                  >
-                    <Github />
-                    <span>{MenuConfig[MenuTitle.GIT_REPO].title}</span>
-                  </button>
-                </MenuLink>
-              </li>
-              <li key={MenuConfig[MenuTitle.CONTACT].href}>
-                <MenuLink menuName={MenuConfig[MenuTitle.CONTACT].title}>
-                  <button
-                    type="button"
-                    className="flex gap-4 w-full items-center rounded-lg py-1.5 px-3 hover:bg-base-200 font-bold"
-                  >
-                    <Coffee />
-                    <span>{MenuConfig[MenuTitle.CONTACT].title}</span>
-                  </button>
-                </MenuLink>
-              </li>
-              <li key={MenuConfig[MenuTitle.ABOUT].href}>
-                <MenuLink menuName={MenuConfig[MenuTitle.ABOUT].title}>
-                  <button
-                    type="button"
-                    className="flex gap-4 w-full items-center rounded-lg py-1.5 px-3 hover:bg-base-200 font-bold"
-                  >
-                    <Linkedin />
-                    <span>{MenuConfig[MenuTitle.ABOUT].title}</span>
-                  </button>
-                </MenuLink>
-              </li>
-              <li key={MenuConfig[MenuTitle.DONATE].href}>
-                <MenuLink menuName={MenuConfig[MenuTitle.DONATE].title}>
-                  <button
-                    type="button"
-                    className="flex gap-4 w-full items-center rounded-lg py-1.5 px-3 hover:bg-base-200 font-bold"
-                  >
-                    <DollarSign />
-                    <span>{MenuConfig[MenuTitle.DONATE].title}</span>
-                  </button>
-                </MenuLink>
-              </li>
+              {renderMenu()}
             </ul>
             <div className="text-center p-4">
-              <Timer fontSize="22px" title="Exactly One Hour :)" customize="tooltip-top" />
+              <HamburgerFooterButton />
             </div>
           </div>
         </div>

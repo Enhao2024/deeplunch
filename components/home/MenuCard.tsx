@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuTitle } from '@/utils/MenuConfig';
-import { MagicCard } from '../ui/magic-card';
-import GradualSpacing from '../ui/gradual-spacing';
+import { MagicCard } from '../ui/magicui/magic-card';
+import GradualSpacing from '../ui/magicui/gradual-spacing';
 import MenuLink from '../layout/MenuLink';
 
 interface Props {

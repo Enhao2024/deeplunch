@@ -1,10 +1,10 @@
 import Email from '@/components/email/Email';
-import Entrance from '@/components/layout/Entrance';
+import NonFunctionalEntrance from '@/components/layout/NonFunctionalEntrance';
 
 const page = () => (
-  <Entrance>
+  <NonFunctionalEntrance custom="my-40">
     <Email />
-  </Entrance>
+  </NonFunctionalEntrance>
 );
 
 export default page;

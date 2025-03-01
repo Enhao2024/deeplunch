@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { Home } from '@geist-ui/icons';
 import LogoIcon from '../svg/LogoIcon';
-import GradualSpacing from '../ui/gradual-spacing';
+import GradualSpacing from '../ui/magicui/gradual-spacing';
 import Timer from './Timer';
 
 function Logo() {
@@ -9,10 +10,10 @@ function Logo() {
       <div className="hidden lg:block">
         <Link href="/">
           <div className="flex flex-row mx-8 justify-between items-center space-x-4">
-            <LogoIcon customize="w-14 h-14" />
+            <LogoIcon customize="w-12 h-12" />
             <GradualSpacing
-              className="font-display text-center text-3xl font-bold -tracking-widest  text-black dark:text-white md:text-3xl md:leading-[5rem]"
-              text="Good After Lunch"
+              className="font-display text-center text-2xl font-bold -tracking-widest  text-neutral-700 dark:text-white"
+              text="DeepLunch"
             />
             <Timer fontSize="22px" title="Will Be Redirected After No Action" customize="tooltip-right" />
           </div>
@@ -21,7 +22,7 @@ function Logo() {
       <div className="lg:hidden">
         <Link href="/">
           <div className="flex flex-row mx-8 justify-between items-center space-x-4">
-            <LogoIcon customize="w-14 h-14" />
+            <Home />
             <Timer fontSize="20px" title="Will Be Redirected After No Action" customize="tooltip-bottom" />
           </div>
         </Link>

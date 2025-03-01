@@ -1,8 +1,8 @@
 import Footer from '@/components/layout/Footer';
-import { ReactNode } from 'react';
 import dynamic from 'next/dynamic';
-import FingerPrint from './FingerPrint';
+import { ReactNode } from 'react';
 import GoogleCaptchaWrapper from '../captcha/GoogleCaptchaWrapper';
+import LeftMenu from './LeftMenu';
 
 const TopBar = dynamic(() => import('@/components/layout/TopBar'), { ssr: false });
 
@@ -11,15 +11,25 @@ interface Props {
   custom?: string;
 }
 
-function Entrance({ children, custom }: Props) {
+function Entrance({ children, custom = '' }: Props) {
   const renderMain = () => (
     <>
-      <FingerPrint />
+      {/* <FingerPrint /> */}
       <TopBar />
-      <div className={custom || 'my-20 lg:my-32'}>
-        {children}
+      <div className="flex flex-col w-full border-b-black">
+        <div className={[custom || 'mt-20', 'w-full grid grid-cols-7'].join(' ')}>
+          <div className="col-span-1 hidden lg:block">
+            <LeftMenu />
+          </div>
+          <div className="col-span-7 lg:col-span-6 ">
+            {children}
+          </div>
+        </div>
+        <div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
+
     </>
   );
   return (
@@ -30,9 +40,5 @@ function Entrance({ children, custom }: Props) {
     </GoogleCaptchaWrapper>
   );
 }
-
-Entrance.defaultProps = {
-  custom: undefined,
-};
 
 export default Entrance;

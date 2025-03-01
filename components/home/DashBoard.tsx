@@ -1,5 +1,5 @@
 import { MenuTitle } from '@/utils/MenuConfig';
-import TextReveal from '../ui/text-reveal';
+import TextReveal from '../ui/magicui/text-reveal';
 
 import MenuCard from './MenuCard';
 

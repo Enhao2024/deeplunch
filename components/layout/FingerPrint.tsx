@@ -1,12 +1,12 @@
 'use client';
 
-import { getBaseUrl } from '@/utils/GeneralUtils';
+import { getBaseAPIUrl } from '@/utils/GeneralUtils';
 import { getCurrentBrowserFingerPrint } from '@rajesh896/broprint.js';
 import axios from 'axios';
-import { publicEncrypt } from 'crypto';
 import { Buffer } from 'buffer';
+import { publicEncrypt } from 'crypto';
 import { debounce } from 'radash';
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface RequestBody {
   fingerprint: string;
@@ -29,7 +29,7 @@ function FingerPrint() {
   // request func
   const request = () => {
     getCurrentBrowserFingerPrint().then(async (fingerprint) => {
-      const baseUrl = getBaseUrl();
+      const baseUrl = getBaseAPIUrl();
       const requestBody: RequestBody = { fingerprint: fingerprint.toString() };
       const encryptedBody = encryptWithPublicKey(PUBLIC_KEY, requestBody);
       try {
