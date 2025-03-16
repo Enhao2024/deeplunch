@@ -33,7 +33,7 @@ function IconMenu({ topbar }: Props) {
   };
 
   return (
-    <div className="hidden lg:block lg:flex space-x-8 justify-evenly items-center nav-menu-text px-8">
+    <div className="hidden lg:flex space-x-8 justify-evenly items-center nav-menu-text px-8">
       {renderMenu()}
       {renderProfileButton()}
     </div>

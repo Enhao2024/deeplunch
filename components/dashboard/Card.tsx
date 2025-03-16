@@ -27,8 +27,8 @@ function Card({ children, custom = '', golive }: Props) {
     >
       <Link href={MenuConfig[MenuTitle.ROADMAP].href}>
         <div className="flex flex-col lg:flex-row justify-center items-center">
-          <LockClosedIcon className="h-10 w-10 lg:h-12 lg:w-12 text-neutral-700" />
-          <div className="p-2 lg:p-4 text-neutral-700 text-base text-center font-semibold">
+          <LockClosedIcon className="h-10 w-10 2xl:h-12 2xl:w-12 text-neutral-700" />
+          <div className="p-2 lg:p-4 text-neutral-700 text-base lg:text-sm 2xl:text-base text-center font-semibold">
             Coming Soon..
           </div>
         </div>

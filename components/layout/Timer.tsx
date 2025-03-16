@@ -70,7 +70,7 @@ function Timer({ title, fontSize, customize }: Props) {
 
   return (
     <div className={`tooltip ${customize}`} style={{ textAlign: 'center' }} data-tip={title}>
-      <div className="bg-slate-50 rounded-md px-2 flex justify-evenly items-center space-x-2" style={{ fontSize }}>
+      <div className={`bg-slate-50 rounded-md px-2 flex justify-evenly items-center space-x-2 ${fontSize}`}>
         <div className="">
           <span>{hours}</span>
           :

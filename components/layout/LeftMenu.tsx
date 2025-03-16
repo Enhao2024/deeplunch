@@ -16,7 +16,7 @@ function LeftMenu() {
 
   const renderMenu = () => LEFT_BAR_MENU.map((menu) => (
     <MenuLink key={menu.href} menuName={menu.title}>
-      <div className="p-4 flex items-center space-x-4 text-base font-semibold rounded-2xl hover:bg-gray-50">
+      <div className="p-3 2xl:p-4 flex items-center space-x-4 text-xs 2xl:text-base font-semibold rounded-2xl hover:bg-gray-50">
         <menu.icon />
         <span>{menu.title}</span>
       </div>
