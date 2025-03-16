@@ -9,9 +9,19 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": ["error", { "functions": "defaultArguments" }],
     "no-console": "warn",
     "max-len": ["error", { "code": 150 }],
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "linebreak-style": ["off"]
   },
-  "ignorePatterns": ["node_modules/", "components/ui/"]
+  "ignorePatterns": ["node_modules/", "components/ui/"],
+  "overrides": [
+    {
+      "files": ["app/api/**/*.ts"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    }
+  ]
 }

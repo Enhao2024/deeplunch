@@ -1,9 +1,9 @@
-import Entrance from '@/components/layout/Entrance';
+import NonFunctionalEntrance from '@/components/layout/NonFunctionalEntrance';
 
 const page = () => (
-  <Entrance custom="m-4">
+  <NonFunctionalEntrance custom="m-4">
     buy me a coffee
-  </Entrance>
+  </NonFunctionalEntrance>
 );
 
 export default page;

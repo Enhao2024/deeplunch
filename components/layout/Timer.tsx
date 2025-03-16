@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+
 'use client';
 
 import { RandomProvider } from '@/constants/Providers';
@@ -6,8 +8,9 @@ import { inDevelopment } from '@/utils/GeneralUtils';
 import {
   getHours, getMinutes, getSeconds, isVisitedToday, setHours, setMinutes, setSeconds, setVisitedToday,
 } from '@/utils/localStorage';
+import { NON_FUNCTIONAL_PAGE } from '@/utils/MenuConfig';
 import { REDIRECT_SEC } from '@/utils/VercelEnv';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
 
@@ -18,6 +21,12 @@ interface Props {
 }
 
 function Timer({ title, fontSize, customize }: Props) {
+  const pathName = usePathname();
+  const isNonFunctionalPage = NON_FUNCTIONAL_PAGE.reduce((acc, menu) => acc || menu?.href === pathName, false);
+
+  if (isNonFunctionalPage) {
+    return null;
+  }
   const router = useRouter();
 
   useEffect(() => {

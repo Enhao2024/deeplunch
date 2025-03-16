@@ -75,11 +75,10 @@
   }
 
   .bg-global {
-    background: #989898;
-    background: 
-        linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%),
-        radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%);
-    background-blend-mode: multiply,multiply;
+    background-image:
+    linear-gradient(#DEDFE3 2%, #ffffff 95%),
+    radial-gradient(33% 100%, rgba(255,255,255,0.50) 10%, rgba(0, 0, 0, 0.5) 100%);
+    background-blend-mode: screen;
   }
   
 }
@@ -112,6 +111,11 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -138,6 +142,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
   }
 }
 
@@ -150,3 +159,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50; }
+  body {
+    @apply bg-background text-foreground; } }

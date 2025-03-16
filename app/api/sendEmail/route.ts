@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';

@@ -1,10 +1,11 @@
+import NestedMap from '@/components/dashboard/NestedMap';
 import Entrance from '@/components/layout/Entrance';
-import SlotMachine from '@/components/lunch/SlotMachine';
-import React from 'react';
 
 const page = () => (
-  <Entrance custom="pt-32">
-    <SlotMachine />
+  <Entrance custom="">
+    <div className="mb-16 lg:m-32 lg:mx-64">
+      <NestedMap />
+    </div>
   </Entrance>
 );
 

@@ -1,16 +1,11 @@
-import { MenuTitle } from '@/utils/MenuConfig';
-import MenuLink from './MenuLink';
+import IconMenu from './IconMenu';
 
 function Footer() {
   return (
-    <footer className="footer footer-center p-10 text-base-content rounded">
-      <nav className="grid grid-flow-col gap-4 font-bold">
-        <MenuLink menuName={MenuTitle.ABOUT} />
-        <MenuLink menuName={MenuTitle.CONTACT} />
-        <MenuLink menuName={MenuTitle.DONATE} />
-      </nav>
+    <footer className="footer footer-center p-10 text-base-content rounded border-t-2">
+      <IconMenu topbar={false} />
       <aside>
-        <p className="text-xs m-2">Copyright © 2024 - All right reserved by GoodAfterLunch</p>
+        <p className="text-xs m-2">Copyright © 2025 - All right reserved by DeepLunch</p>
         <div className="text-xs m-2">
           This site is protected by reCAPTCHA and the Google&nbsp;
           <a className="font-bold" href="https://policies.google.com/privacy">Privacy Policy</a>

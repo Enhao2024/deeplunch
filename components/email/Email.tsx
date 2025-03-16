@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { throttle } from 'radash';
-import ShimmerButton from '../ui/shimmer-button';
+import ShimmerButton from '../ui/magicui/shimmer-button';
 
 function Email() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -54,10 +54,15 @@ function Email() {
     <div className="hero">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left px-8">
-          <h1 className="text-5xl font-bold">Any Thoughts?</h1>
-          <p className="py-6 font-semibold">
-            We value every ridiculous thought! Talk to us about your brainstorm and help promoting our playful community!
-          </p>
+          <h1 className="text-5xl font-bold text-neutral-700">Any Thoughts?</h1>
+          <div className="py-8 font-semibold text-neutral-700 flex flex-col space-y-2">
+            <p className="">
+              We value thoughts from everyone.
+            </p>
+            <p className="">
+              Talk to us about your brainstorm and help promoting our garage project!
+            </p>
+          </div>
         </div>
         <div className="card shrink-0 w-full max-w-md shadow-2xl bg-base-100">
           <form className="card-body">

@@ -9,7 +9,11 @@ interface Props {
   children?: ReactNode,
 }
 
-function MenuLink({ menuName, newPage, children }: Props) {
+function MenuLink({
+  menuName,
+  newPage = false,
+  children = undefined,
+}: Props) {
   if (!menuName || !MenuConfig[menuName]) {
     return null;
   }
@@ -34,10 +38,5 @@ function MenuLink({ menuName, newPage, children }: Props) {
     <Link href={MenuConfig[menuName].href} target={newPage ? '_blank' : '_self'}>{content()}</Link>
   );
 }
-
-MenuLink.defaultProps = {
-  newPage: false,
-  children: undefined,
-};
 
 export default MenuLink;
