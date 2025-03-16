@@ -25,7 +25,7 @@ export default function page() {
         <Card custom="col-span-3 h-32" golive>
           <Statistic icon={<Clock size={48} />} title="Until Home" number={4} unit="hours" />
         </Card>
-        <div className="col-span-8 h-[55vh] p-8">
+        <div className="col-span-8 h-[55vh] p-8 flex flex-col justify-center">
           <NestedMap />
         </div>
         <Card custom="col-span-4 h-[55vh]" golive={false}>06</Card>
@@ -48,10 +48,10 @@ export default function page() {
         <Card custom="col-span-3 h-24" golive>
           <Statistic icon={<Clock size={36} />} title="Until Home" number={4} unit="hours" />
         </Card>
-        <div className="col-span-8 h-[60vh] p-4">
+        <div className="col-span-8 h-[58vh] p-4 flex flex-col justify-center">
           <NestedMap />
         </div>
-        <Card custom="col-span-4 h-[60vh]" golive={false}>06</Card>
+        <Card custom="col-span-4 h-[58vh]" golive={false}>06</Card>
         <Card custom="col-span-4 h-48 " golive={false}>07</Card>
         <Card custom="col-span-4 h-48 " golive={false}>08</Card>
         <Card custom="col-span-4 h-48 " golive={false}>09</Card>
