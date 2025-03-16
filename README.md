@@ -6,7 +6,7 @@ Ever find yourself glued to your phone during lunch, only to realize you didn’
 - **Random Food Map:** Not sure what to eat? Let our smart map pick a spot for you!
 - **Smart & Personalized Planner:** Plan your afternoon, after-work activities, or even your weekend in a way that suits you.
 
-## Future Plans
+## 🔮 Future Plans
 - **AI + Meditation:** Get personalized, AI-powered meditation sessions to refresh your mind.
 - **Command-Line Terminal:** Easily manage your lunch break plans with simple terminal commands.
 - **Community & Chatroom:** Connect with others, share your lunch break ideas, and find inspiration.
