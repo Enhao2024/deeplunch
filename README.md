@@ -1,14 +1,20 @@
-This is an open source [Next.js](https://nextjs.org/) project. Our mission is to create the world's largest online ~~slack-off~~ lunch break community. We’re all about embracing the art of the midday reset — sometimes, the most productive thing you can do is step away from your screen for a while and daydream about that perfect weekend getaway or your favorite Netflix series.
+## 🌟 Why DeepLunch
 
-## More than Slack-Off 🧠
+Ever find yourself glued to your phone during lunch, only to realize you didn’t actually rest? DeepLunch is here to change that! We believe your lunch break should be more than just a meal—it’s a chance to recharge, refocus, and even get a little inspired. Whether it’s through AI-powered meditation, planning your afternoon and weekend, or using our random food map to pick lunch, DeepLunch helps you make every break count.
 
-We firmly believe that taking a breather is key to conquering your afternoon workload like a boss. Rebalance, refresh, and return with the energy of a thousand (well, maybe a hundred) coffees. Whether it's planning your next culinary adventure, trading hilarious cat memes, or sharing your latest hobby, this is the place to do it.
+## 🚀 Features
+- **Random Food Map:** Not sure what to eat? Let our smart map pick a spot for you!
+- **Smart & Personalized Planner:** Plan your afternoon, after-work activities, or even your weekend in a way that suits you.
 
-## Don’t piss off your boss 😈
+## Future Plans
+- **AI + Meditation:** Get personalized, AI-powered meditation sessions to refresh your mind.
+- **Command-Line Terminal:** Easily manage your lunch break plans with simple terminal commands.
+- **Community & Chatroom:** Connect with others, share your lunch break ideas, and find inspiration.
 
-But hey, we're not encouraging endless loafing around! To keep things balanced and productive, each user is limited to one hour of fun per day. Once you've hit your limit, you’ll be gently redirected to a random educational website — and in case you left too long😏
+## 🛠️ Tech Stack
+- **Frontend:** Next.js
+- **CI/CD:** Github Actions + Vercel
+- **Cloud & Security:** AWS Services
 
-## How to join the fun 🏄‍♂️
-
-Interested in being part of the coolest slacker crew around? Simply reach out to our project admin and snag yourself an invite. We welcome contributions, be they ideas, code, or even just really great snack recommendations.
-
+## 💡 Get Involved
+We welcome contributions! If you have ideas for new features or improvements, feel free to open an issue or contact through email to join.
