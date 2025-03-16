@@ -83,20 +83,16 @@ function NestedMap() {
   if (!queryString) return null;
 
   return (
-    <div className="flex flex-col justify-around items-center lg:flex-row space-y-8 lg:space-y-0 lg:space-x-4">
+    <div className="h-hull flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0 lg:space-x-6">
       <Map
         queryString={queryString}
-        pcWidth={450}
-        pcHeight={400}
-        mbWidth={300}
-        mbHeight={400}
         zoom={zoom}
         mapType={mapType}
       />
-      <div className="w-full flex flex-col justify-around items-center space-y-8">
+      <div className="w-full flex flex-col justify-around items-center space-y-8 lg:space-y-4 2xl:space-y-8">
 
         <WordRotate
-          className="text-4xl font-bold text-black dark:text-white"
+          className="text-4xl lg:text-xl 2xl:text-4xl font-bold text-black dark:text-white"
           words={['Your Choice', `${item}`]}
         />
 
@@ -135,15 +131,15 @@ function NestedMap() {
           }}
         />
 
-        <div className="flex space-x-8">
+        <div className="flex space-x-6 2xl:space-x-8">
           <PulsatingButton
-            className="w-32"
+            className="w-32 lg:w-28 2xl:w-32 text-base lg:text-xs 2xl:text-base"
             onClick={throttledRandomSearch}
           >
             Random!
           </PulsatingButton>
           <PulsatingButton
-            className="w-32"
+            className="w-32 lg:w-28 2xl:w-32 text-base lg:text-xs 2xl:text-base"
             onClick={throttledSearch}
           >
             Search

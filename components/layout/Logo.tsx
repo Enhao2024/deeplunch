@@ -10,12 +10,12 @@ function Logo() {
       <div className="hidden lg:block">
         <Link href="/">
           <div className="flex flex-row mx-8 justify-between items-center space-x-4">
-            <LogoIcon customize="w-12 h-12" />
+            <LogoIcon customize="w-10 w-10 2xl:w-12 2xl:h-12" />
             <GradualSpacing
-              className="font-display text-center text-2xl font-bold -tracking-widest  text-neutral-700 dark:text-white"
+              className="font-display text-center text-xl 2xl:text-2xl font-bold -tracking-widest  text-neutral-700 dark:text-white"
               text="DeepLunch"
             />
-            <Timer fontSize="22px" title="Will Be Redirected After No Action" customize="tooltip-right" />
+            <Timer fontSize="text-[20px] 2xl:text-[22px]" title="Will Be Redirected After No Action" customize="tooltip-right" />
           </div>
         </Link>
       </div>
@@ -23,7 +23,7 @@ function Logo() {
         <Link href="/">
           <div className="flex flex-row mx-8 justify-between items-center space-x-4">
             <Home />
-            <Timer fontSize="20px" title="Will Be Redirected After No Action" customize="tooltip-bottom" />
+            <Timer fontSize="text-[20px]" title="Will Be Redirected After No Action" customize="tooltip-bottom" />
           </div>
         </Link>
       </div>

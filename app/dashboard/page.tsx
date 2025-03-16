@@ -11,8 +11,8 @@ import {
 export default function page() {
   return (
     <Entrance custom="">
-      {/* PC */}
-      <div className="px-16 py-8 w-9/10 hidden lg:grid grid-cols-12 gap-4">
+      {/* PC large */}
+      <div className="px-16 py-8 w-9/10 hidden 2xl:grid grid-cols-12 gap-4">
         <Card custom="col-span-3 h-32" golive>
           <Statistic icon={<Pin size={48} />} title="Jobs Done" number={10} unit="%" />
         </Card>
@@ -32,6 +32,29 @@ export default function page() {
         <Card custom="col-span-4 h-64" golive={false}>07</Card>
         <Card custom="col-span-4 h-64" golive={false}>08</Card>
         <Card custom="col-span-4 h-64" golive={false}>09</Card>
+      </div>
+
+      {/* PC small */}
+      <div className="px-16 py-8 w-9/10 hidden lg:grid 2xl:hidden grid-cols-12 gap-4">
+        <Card custom="col-span-3 h-24" golive>
+          <Statistic icon={<Pin size={36} />} title="Jobs Done" number={10} unit="%" />
+        </Card>
+        <Card custom="col-span-3 h-24" golive>
+          <Statistic icon={<Moon size={36} />} title="Meditation" number={15} unit="mins" />
+        </Card>
+        <Card custom="col-span-3 h-24" golive>
+          <Statistic icon={<ThumbsUp size={36} />} title="Learning" number={20} unit="mins" />
+        </Card>
+        <Card custom="col-span-3 h-24" golive>
+          <Statistic icon={<Clock size={36} />} title="Until Home" number={4} unit="hours" />
+        </Card>
+        <div className="col-span-8 h-[60vh] p-4">
+          <NestedMap />
+        </div>
+        <Card custom="col-span-4 h-[60vh]" golive={false}>06</Card>
+        <Card custom="col-span-4 h-48 " golive={false}>07</Card>
+        <Card custom="col-span-4 h-48 " golive={false}>08</Card>
+        <Card custom="col-span-4 h-48 " golive={false}>09</Card>
       </div>
 
       {/* Mobile */}
