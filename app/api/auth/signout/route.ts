@@ -2,6 +2,8 @@ import { getBaseSiteUrl } from '@/utils/GeneralUtils';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 const {
   COGNITO_DOMAIN,
   COGNITO_APP_CLIENT_ID,
