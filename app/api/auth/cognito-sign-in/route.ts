@@ -2,6 +2,8 @@ import { getBaseSiteUrl } from '@/utils/GeneralUtils';
 import crypto from 'crypto';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 const {
   COGNITO_DOMAIN,
   COGNITO_APP_CLIENT_ID,
