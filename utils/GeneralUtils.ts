@@ -33,7 +33,6 @@ export function getBaseSiteUrl() {
   }
 }
 
-
 export function inProduction() {
   return CURRENT_ENV === PROD;
 }
@@ -80,4 +79,8 @@ export function getProfile(idToken: string | undefined) {
     return profile;
   }
   return null;
+}
+
+export function truncate(str: string, maxLength: number = 30): string {
+  return str.length > maxLength ? str.slice(0, maxLength) + "..." : str;
 }
