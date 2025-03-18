@@ -26,6 +26,12 @@ dependencies:
   axios:
     specifier: ^1.7.2
     version: 1.7.2
+  chart.js:
+    specifier: ^4.4.8
+    version: 4.4.8
+  chartjs-plugin-datalabels:
+    specifier: ^2.2.0
+    version: 2.2.0(chart.js@4.4.8)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -65,6 +71,9 @@ dependencies:
   react:
     specifier: ^18
     version: 18.3.1
+  react-chartjs-2:
+    specifier: ^5.3.0
+    version: 5.3.0(chart.js@4.4.8)(react@18.3.1)
   react-dom:
     specifier: ^18
     version: 18.3.1(react@18.3.1)
@@ -522,6 +531,10 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /@kurkle/color@0.3.4:
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+    dev: false
 
   /@next/env@14.2.3:
     resolution: {integrity: sha512-W7fd7IbkfmeeY2gXrzJYDx8D2lWKbVoTIj1o1ScPHNzvp30s1AuoEFSdr39bC5sjxJaxTtq3OTCZboNp0lNWHA==}
@@ -1296,6 +1309,21 @@ packages:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
+
+  /chart.js@4.4.8:
+    resolution: {integrity: sha512-IkGZlVpXP+83QpMm4uxEiGqSI7jFizwVtF3+n5Pc3k7sMO+tkd0qxh2OzLhenM0K80xtmAONWGBn082EiBQSDA==}
+    engines: {pnpm: '>=8'}
+    dependencies:
+      '@kurkle/color': 0.3.4
+    dev: false
+
+  /chartjs-plugin-datalabels@2.2.0(chart.js@4.4.8):
+    resolution: {integrity: sha512-14ZU30lH7n89oq+A4bWaJPnAG8a7ZTk7dKf48YAzMvJjQtjrgg5Dpk9f+LbjCF6bpx3RAGTeL13IXpKQYyRvlw==}
+    peerDependencies:
+      chart.js: '>=3.0.0'
+    dependencies:
+      chart.js: 4.4.8
+    dev: false
 
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -3519,6 +3547,16 @@ packages:
   /radash@12.1.0:
     resolution: {integrity: sha512-b0Zcf09AhqKS83btmUeYBS8tFK7XL2e3RvLmZcm0sTdF1/UUlHSsjXdCcWNxe7yfmAlPve5ym0DmKGtTzP6kVQ==}
     engines: {node: '>=14.18.0'}
+    dev: false
+
+  /react-chartjs-2@5.3.0(chart.js@4.4.8)(react@18.3.1):
+    resolution: {integrity: sha512-UfZZFnDsERI3c3CZGxzvNJd02SHjaSJ8kgW1djn65H1KK8rehwTjyrRKOG3VTMG8wtHZ5rgAO5oTHtHi9GCCmw==}
+    peerDependencies:
+      chart.js: ^4.1.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      chart.js: 4.4.8
+      react: 18.3.1
     dev: false
 
   /react-dom@18.3.1(react@18.3.1):

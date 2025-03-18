@@ -9,6 +9,7 @@ import { demoList } from '@/types/common';
 import {
   Clock, Moon, Pin, ThumbsUp,
 } from '@geist-ui/icons';
+import PieChartDemo from '@/components/dashboard/PieChart';
 
 export default function page() {
   return (
@@ -30,7 +31,9 @@ export default function page() {
         <div className="col-span-8 h-[55vh] p-8 flex flex-col justify-center">
           <NestedMap />
         </div>
-        <Card custom="col-span-4 h-[55vh]" golive={false}>06</Card>
+        <Card custom="col-span-4 h-[55vh]" golive>
+          <PieChartDemo />
+        </Card>
         <Card custom="col-span-4 h-96" golive>
           <NestedTasks title="Afternoon Plan" taskList={demoList} />
         </Card>
@@ -59,7 +62,9 @@ export default function page() {
         <div className="col-span-8 h-[58vh] p-4 flex flex-col justify-center">
           <NestedMap />
         </div>
-        <Card custom="col-span-4 h-[58vh]" golive={false}>06</Card>
+        <Card custom="col-span-4 h-[58vh]" golive>
+          <PieChartDemo />
+        </Card>
 
         <Card custom="col-span-4 h-96" golive>
           <NestedTasks title="Afternoon Plan" taskList={demoList} />
@@ -89,7 +94,9 @@ export default function page() {
         <div className="col-span-2 h-[920px] p-4">
           <NestedMap />
         </div>
-        <Card custom="col-span-2 h-[50vh]" golive={false}>06</Card>
+        <Card custom="col-span-2 h-[50vh]" golive>
+          <PieChartDemo />
+        </Card>
 
         <Card custom="col-span-2 h-96" golive>
           <NestedTasks title="Afternoon Plan" taskList={demoList} />
