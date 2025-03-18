@@ -8,6 +8,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": ["error", { "functions": "defaultArguments" }],
     "no-console": "warn",

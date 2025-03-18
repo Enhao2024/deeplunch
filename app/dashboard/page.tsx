@@ -1,9 +1,11 @@
 'use client';
 
 import Card from '@/components/dashboard/Card';
+import NestedTasks from '@/components/dashboard/NestedTasks';
 import NestedMap from '@/components/dashboard/NestedMap';
 import Statistic from '@/components/dashboard/Statistic';
 import Entrance from '@/components/layout/Entrance';
+import { demoList } from '@/types/common';
 import {
   Clock, Moon, Pin, ThumbsUp,
 } from '@geist-ui/icons';
@@ -29,9 +31,15 @@ export default function page() {
           <NestedMap />
         </div>
         <Card custom="col-span-4 h-[55vh]" golive={false}>06</Card>
-        <Card custom="col-span-4 h-64" golive={false}>07</Card>
-        <Card custom="col-span-4 h-64" golive={false}>08</Card>
-        <Card custom="col-span-4 h-64" golive={false}>09</Card>
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="Afternoon Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="After Work Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="Weekend Plan" taskList={demoList} />
+        </Card>
       </div>
 
       {/* PC small */}
@@ -52,9 +60,16 @@ export default function page() {
           <NestedMap />
         </div>
         <Card custom="col-span-4 h-[58vh]" golive={false}>06</Card>
-        <Card custom="col-span-4 h-48 " golive={false}>07</Card>
-        <Card custom="col-span-4 h-48 " golive={false}>08</Card>
-        <Card custom="col-span-4 h-48 " golive={false}>09</Card>
+
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="Afternoon Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="After Work Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-4 h-96" golive>
+          <NestedTasks title="Weekend Plan" taskList={demoList} />
+        </Card>
       </div>
 
       {/* Mobile */}
@@ -75,9 +90,16 @@ export default function page() {
           <NestedMap />
         </div>
         <Card custom="col-span-2 h-[50vh]" golive={false}>06</Card>
-        <Card custom="col-span-2 h-64" golive={false}>07</Card>
-        <Card custom="col-span-2 h-64" golive={false}>08</Card>
-        <Card custom="col-span-2 h-64" golive={false}>09</Card>
+
+        <Card custom="col-span-2 h-96" golive>
+          <NestedTasks title="Afternoon Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-2 h-96" golive>
+          <NestedTasks title="After Work Plan" taskList={demoList} />
+        </Card>
+        <Card custom="col-span-2 h-96" golive>
+          <NestedTasks title="Weekend Plan" taskList={demoList} />
+        </Card>
       </div>
     </Entrance>
   );
