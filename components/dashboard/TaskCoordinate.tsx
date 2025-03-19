@@ -11,8 +11,8 @@ interface Props {
 
 function TaskCoordinate({ taskList }: Props) {
   const renderTasks = (priority: TaskPriority, importance: TaskImportance, color: string) => taskList.filter((task) => task.status !== TaskStatus.DONE
-      && task.priority === priority
-      && task.importance === importance).map((task) => <CoordinateTask color={color} task={task} />).slice(0, 4);
+    && task.priority === priority
+    && task.importance === importance).map((task) => <CoordinateTask color={color} task={task} />).slice(0, 4);
 
   return (
     <div className="relative w-7/8 max-w-lg h-64 shadow-lg rounded-lg text-xs">
