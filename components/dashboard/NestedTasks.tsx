@@ -28,7 +28,7 @@ function NestedTasks({ title, taskList }: Props) {
           className="cursor-pointer p-2 rounded-lg bg-white shadow-lg hover:bg-gray-100"
           onClick={() => { setGrid(false); }}
         >
-          <ListBulletIcon className="h-5 w-5" />
+          <ListBulletIcon className="h-4 w-4 2xl:h-5 2xl:w-5" />
         </div>
       );
     }
@@ -37,7 +37,7 @@ function NestedTasks({ title, taskList }: Props) {
         className="cursor-pointer p-2 rounded-lg bg-white shadow-lg hover:bg-gray-100"
         onClick={() => { setGrid(true); }}
       >
-        <GridIcon className="h-5 w-5" />
+        <GridIcon className="h-4 w-4 2xl:h-5 2xl:w-5" />
       </div>
     );
   };
@@ -45,11 +45,11 @@ function NestedTasks({ title, taskList }: Props) {
   return (
     <div className="w-full h-full grid grid-rows-10">
       <div className="row-span-2 px-2 flex justify-between items-center">
-        <div className="text-neutral-700 text-xl lg:text-base 2xl:text-xl font-bold">{title}</div>
-        <div className="flex justify-center items-center space-x-4">
+        <div className="text-neutral-700 text-base 2xl:text-xl font-bold">{title}</div>
+        <div className="flex justify-between items-center space-x-2 2xl:space-x-4">
           <div className="cursor-pointer p-2 rounded-lg bg-white shadow-lg hover:bg-gray-100">
             <Link href={MenuConfig[MenuTitle.PLANNER].href}>
-              <MixerHorizontalIcon className="h-5 w-5" />
+              <MixerHorizontalIcon className="h-4 w-4 2xl:h-5 2xl:w-5" />
             </Link>
           </div>
           {renderViewButton()}

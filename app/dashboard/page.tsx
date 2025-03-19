@@ -10,6 +10,7 @@ import {
   Clock, Moon, Pin, ThumbsUp,
 } from '@geist-ui/icons';
 import PieChartDemo from '@/components/dashboard/PieChart';
+import TaskCarousel from '@/components/dashboard/TaskCarousel';
 
 export default function page() {
   return (
@@ -78,34 +79,22 @@ export default function page() {
       </div>
 
       {/* Mobile */}
-      <div className="px-8 py-8 w-9/10 grid grid-cols-2 gap-y-4 lg:hidden">
-        <Card custom="col-span-3 h-16 px-8" golive>
-          <Statistic icon={<Pin size={32} />} title="Jobs Done" number={10} unit="%" />
+      <div className="px-8 py-8 w-9/10 flex flex-col space-y-4 lg:hidden">
+        <Card custom="h-68 px-8 flex flex-col space-y-4 justify-center items-start" golive>
+          <div className="w-full pb-2 text-left text-2xl font-semibold text-neutral-700">🚀 Overview</div>
+          <Statistic icon={<Pin size={28} />} title="Jobs Done" number={10} unit="%" />
+          <Statistic icon={<Moon size={28} />} title="Meditation" number={15} unit="mins" />
+          <Statistic icon={<ThumbsUp size={28} />} title="Learning" number={20} unit="mins" />
+          <Statistic icon={<Clock size={28} />} title="Until Home" number={4} unit="hours" />
         </Card>
-        <Card custom="col-span-3 h-16 px-8" golive>
-          <Statistic icon={<Moon size={32} />} title="Meditation" number={15} unit="mins" />
-        </Card>
-        <Card custom="col-span-3 h-16 px-8" golive>
-          <Statistic icon={<ThumbsUp size={32} />} title="Learning" number={20} unit="mins" />
-        </Card>
-        <Card custom="col-span-3 h-16 px-8" golive>
-          <Statistic icon={<Clock size={32} />} title="Until Home" number={4} unit="hours" />
-        </Card>
-        <div className="col-span-2 h-[920px] p-4">
+        <div className="p-4">
           <NestedMap />
         </div>
-        <Card custom="col-span-2 h-[50vh]" golive>
+        <Card custom="py-8" golive>
           <PieChartDemo />
         </Card>
-
-        <Card custom="col-span-2 h-96" golive>
-          <NestedTasks title="Afternoon Plan" taskList={demoList} />
-        </Card>
-        <Card custom="col-span-2 h-96" golive>
-          <NestedTasks title="After Work Plan" taskList={demoList} />
-        </Card>
-        <Card custom="col-span-2 h-96" golive>
-          <NestedTasks title="Weekend Plan" taskList={demoList} />
+        <Card custom="h-96 w-full" golive>
+          <TaskCarousel />
         </Card>
       </div>
     </Entrance>
