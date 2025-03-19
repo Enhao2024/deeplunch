@@ -1,8 +1,11 @@
 import Entrance from '@/components/layout/Entrance';
 
 const page = () => (
-  <Entrance custom="m-4">
-    planner page
+  <Entrance custom="">
+    <div className="px-16 py-8">
+      planner page
+    </div>
+
   </Entrance>
 );
 
