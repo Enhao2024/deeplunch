@@ -17,11 +17,11 @@ function Entrance({ children, custom = '' }: Props) {
       {/* <FingerPrint /> */}
       <TopBar />
       <div className="flex flex-col w-full border-b-black">
-        <div className={[custom || 'mt-20', 'w-full grid grid-cols-7'].join(' ')}>
+        <div className="mt-20 w-full grid grid-cols-7">
           <div className="col-span-1 hidden lg:block">
             <LeftMenu />
           </div>
-          <div className="col-span-7 lg:col-span-6 ">
+          <div className={`min-h-screen col-span-7 lg:col-span-6 ${custom}`}>
             {children}
           </div>
         </div>
@@ -29,12 +29,11 @@ function Entrance({ children, custom = '' }: Props) {
           <Footer />
         </div>
       </div>
-
     </>
   );
   return (
     <GoogleCaptchaWrapper>
-      <main className="flex min-h-screen flex-col items-center justify-between bg-global">
+      <main className="flex flex-col items-center justify-between bg-global">
         {renderMain()}
       </main>
     </GoogleCaptchaWrapper>

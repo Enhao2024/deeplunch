@@ -1,5 +1,5 @@
 import {
-  Task, TaskImportance, TaskPriority, TaskStatus, TaskType,
+  Task, TaskImportance, TaskPriority, TaskStatus,
 } from '@/types/common';
 import { useMemo } from 'react';
 
@@ -40,12 +40,7 @@ function TaskProgress({ taskList }: Props) {
       },
     };
 
-    // todo: filter out today's task
-    // but will suggest filter at backend
-    // e.g. for afternoon plan and after work plan, only get today's
-    // for weekend plan, get current week's
-    // so we don't have to do this at frontend.
-    taskList.filter((task) => task.type === TaskType.AFT).forEach((task) => {
+    taskList.forEach((task) => {
       if (task.importance === TaskImportance.IMPORTANT && task.priority === TaskPriority.URGENT) {
         data.importantUrgent.total += 1;
         data.importantUrgent.done += task.status === TaskStatus.DONE ? 1 : 0;

@@ -1,22 +1,27 @@
 'use client';
 
-import { Task } from '@/types/common';
+import { Task, TaskType } from '@/types/common';
 import { MenuConfig, MenuTitle } from '@/utils/MenuConfig';
 import { GridIcon, ListBulletIcon, MixerHorizontalIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import { useState } from 'react';
 import TaskCoordinate from './TaskCoordinate';
 import TaskList from './TaskList';
+import NoTask from './NoTask';
 
 interface Props {
   title: string;
   taskList: Task[];
+  taskType: TaskType
 }
 
-function NestedTasks({ title, taskList }: Props) {
+function NestedTasks({ title, taskList, taskType }: Props) {
   const [grid, setGrid] = useState<boolean>(false);
 
   const renderTaskView = () => {
+    if (!taskList || taskList.length === 0) {
+      return <NoTask taskType={taskType} />;
+    }
     if (grid) return <TaskCoordinate taskList={taskList} />;
     return <TaskList taskList={taskList} />;
   };

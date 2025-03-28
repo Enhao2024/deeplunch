@@ -1,13 +1,16 @@
 'use client';
 
-import { PieChartIcon, TextAlignLeftIcon } from '@radix-ui/react-icons';
+import { Task, TaskType } from '@/types/common';
+import {
+  PieChartIcon, TextAlignLeftIcon,
+} from '@radix-ui/react-icons';
 import { useState } from 'react';
-import { Task } from '@/types/common';
+import NoTask from './NoTask';
 import TaskPieChart from './TaskPieChart';
 import TaskProgress from './TaskProgress';
 
 interface Props {
-  taskList: Task[],
+  taskList: Task[]
 }
 
 function TaskOverview({ taskList }: Props) {
@@ -39,6 +42,10 @@ function TaskOverview({ taskList }: Props) {
       </div>
     );
   };
+
+  if (!taskList || taskList.length === 0) {
+    return <NoTask taskType={TaskType.AFT} />;
+  }
 
   return (
     <div className="relative w-full h-full flex flex-col justify-center items-center space-y-4">
