@@ -1,6 +1,6 @@
 'use client';
 
-import { Task, TaskStatus, TaskType } from '@/types/common';
+import { Task, TaskStatus } from '@/types/common';
 import {
   ArcElement,
   Chart as ChartJS,
@@ -50,17 +50,11 @@ function TaskPieChart({ taskList }: Props) {
     let taskPending = 0;
     let taskDone = 0;
 
-    // todo: filter out today's task
-    // but will suggest filter at backend
-    // e.g. for afternoon plan and after work plan, only get today's
-    // for weekend plan, get current week's
-    // so we don't have to do this at frontend.
-    taskList.filter((task) => task.type === TaskType.AFT)
-      .forEach((task) => {
-        taskInProgress += task.status === TaskStatus.DOING ? 1 : 0;
-        taskPending += task.status === TaskStatus.PENDING ? 1 : 0;
-        taskDone += task.status === TaskStatus.DONE ? 1 : 0;
-      });
+    taskList.forEach((task) => {
+      taskInProgress += task.status === TaskStatus.DOING ? 1 : 0;
+      taskPending += task.status === TaskStatus.PENDING ? 1 : 0;
+      taskDone += task.status === TaskStatus.DONE ? 1 : 0;
+    });
 
     return {
       labels: ['Doing', 'Pending', 'Done'],

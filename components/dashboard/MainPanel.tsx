@@ -6,29 +6,87 @@ import NestedTasks from '@/components/dashboard/NestedTasks';
 import Statistic from '@/components/dashboard/Statistic';
 import TaskCarousel from '@/components/dashboard/TaskCarousel';
 import TaskOverview from '@/components/dashboard/TaskOverview';
-import { demoList, TaskStatus, TaskType } from '@/types/common';
+import {
+  Profile, Task, TaskStatus, TaskType,
+} from '@/types/common';
+import { getBaseAPIUrl, getProfile } from '@/utils/GeneralUtils';
 import {
   Clock, Moon, Pin, ThumbsUp,
 } from '@geist-ui/icons';
-import { useMemo } from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { useEffect, useMemo, useState } from 'react';
 
 // todo: make this configurable
 const TIME_OFF = 18;
 
 function MainPanel() {
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [profile, setProfile] = useState<Profile | null>(null);
+
+  useEffect(() => {
+    const token = Cookies.get('id_token');
+    const userProfile = getProfile(token);
+    setProfile(userProfile);
+  }, []);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const baseUrl = getBaseAPIUrl();
+        const response = await axios.get(`${baseUrl}/user/tasks`, {
+          params: { userId: profile?.email },
+        });
+        const taskList = response.data.tasks.map(({
+          taskId,
+          name,
+          status,
+          description,
+          createdLocalTime,
+          updatedLocalTime,
+          type,
+          priority,
+          importance,
+        }: Task) => ({
+          taskId,
+          name,
+          status,
+          description,
+          createdLocalTime,
+          updatedLocalTime,
+          type,
+          priority,
+          importance,
+        }));
+        setTasks(taskList);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    if (profile) {
+      fetchTasks();
+    }
+  }, [profile]);
+
   const calculateHoursLeft = () => {
     const now = new Date();
     const currentHour = now.getHours();
     return TIME_OFF - currentHour >= 0 ? TIME_OFF - currentHour : 0;
   };
 
+  const afternoonTasks = useMemo(() => tasks.filter((task) => task.type === TaskType.AFT), [tasks]);
+
+  const afterWorkTasks = useMemo(() => tasks.filter((task) => task.type === TaskType.AFW), [tasks]);
+
+  const weekendTasks = useMemo(() => tasks.filter((task) => task.type === TaskType.WKE), [tasks]);
+
   const taskDone = useMemo(() => {
-    // todo: filter out only today's task (at backend)
-    const todaysTask = demoList.filter((task) => task.type === TaskType.AFT);
-    const total = todaysTask.length;
-    const done = todaysTask.filter((task) => task.status === TaskStatus.DONE).length;
+    const total = afternoonTasks.length;
+    if (total === 0) return 0;
+    const done = afternoonTasks.filter((task) => task.status === TaskStatus.DONE).length;
     return Math.ceil(100 * (done / total));
-  }, [demoList]);
+  }, [tasks]);
 
   return (
     <>
@@ -50,16 +108,16 @@ function MainPanel() {
           <NestedMap />
         </div>
         <Card custom="col-span-4 h-[55vh]" golive>
-          <TaskOverview taskList={demoList} />
+          <TaskOverview taskList={afternoonTasks} />
         </Card>
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="Afternoon Plan" taskList={demoList} />
+          <NestedTasks title="Afternoon Plan" taskList={afternoonTasks} taskType={TaskType.AFT} />
         </Card>
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="After Work Plan" taskList={demoList} />
+          <NestedTasks title="After Work Plan" taskList={afterWorkTasks} taskType={TaskType.AFW} />
         </Card>
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="Weekend Plan" taskList={demoList} />
+          <NestedTasks title="Weekend Plan" taskList={weekendTasks} taskType={TaskType.WKE} />
         </Card>
       </div>
 
@@ -81,17 +139,17 @@ function MainPanel() {
           <NestedMap />
         </div>
         <Card custom="col-span-4 h-[58vh]" golive>
-          <TaskOverview taskList={demoList} />
+          <TaskOverview taskList={tasks} />
         </Card>
 
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="Afternoon Plan" taskList={demoList} />
+          <NestedTasks title="Afternoon Plan" taskList={afternoonTasks} taskType={TaskType.AFT} />
         </Card>
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="After Work Plan" taskList={demoList} />
+          <NestedTasks title="After Work Plan" taskList={afterWorkTasks} taskType={TaskType.AFW} />
         </Card>
         <Card custom="col-span-4 h-96" golive>
-          <NestedTasks title="Weekend Plan" taskList={demoList} />
+          <NestedTasks title="Weekend Plan" taskList={weekendTasks} taskType={TaskType.WKE} />
         </Card>
       </div>
 
@@ -107,10 +165,10 @@ function MainPanel() {
           <NestedMap />
         </div>
         <Card custom="py-8" golive>
-          <TaskOverview taskList={demoList} />
+          <TaskOverview taskList={tasks} />
         </Card>
         <Card custom="h-96 w-full" golive>
-          <TaskCarousel />
+          <TaskCarousel afternoonTasks={afternoonTasks} afterWorkTasks={afterWorkTasks} weekendTasks={weekendTasks} />
         </Card>
       </div>
     </>
