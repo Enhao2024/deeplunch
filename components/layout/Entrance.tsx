@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
 import GoogleCaptchaWrapper from '../captcha/GoogleCaptchaWrapper';
 import LeftMenu from './LeftMenu';
+import FingerPrint from './FingerPrint';
 
 const TopBar = dynamic(() => import('@/components/layout/TopBar'), { ssr: false });
 
@@ -14,7 +15,7 @@ interface Props {
 function Entrance({ children, custom = '' }: Props) {
   const renderMain = () => (
     <>
-      {/* <FingerPrint /> */}
+      <FingerPrint />
       <TopBar />
       <div className="flex flex-col w-full border-b-black">
         <div className="mt-20 w-full grid grid-cols-7">
