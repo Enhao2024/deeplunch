@@ -4,6 +4,9 @@ function Footer() {
   return (
     <footer className="footer footer-center p-10 text-base-content rounded border-t-2">
       <IconMenu topbar={false} />
+      <a href="https://www.buymeacoffee.com/enhao2024" target="_blank" rel="noreferrer">
+        <img className="h-14" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
+      </a>
       <aside>
         <p className="text-xs m-2">Copyright © 2025 - All right reserved by DeepLunch</p>
         <div className="text-xs m-2">
