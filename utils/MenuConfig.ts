@@ -160,7 +160,7 @@ export const MenuConfig: { [key: string]: Menu } = {
   [MenuTitle.BRAINSTORM]: {
     title: MenuTitle.BRAINSTORM,
     href: "/brainstorm",
-    golive: true,
+    golive: false,
     icon: Codepen,
   },
 };
