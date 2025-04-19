@@ -62,6 +62,17 @@ const page = () => (
         imageAlt="First feature alt text"
         fullRounded
       />
+      <VerticalFeatureRow
+        title="404Found: Frontend Developer"
+        description={`Curiosity guides me.
+                      Learning fuels every step—
+                      from code experiments to quick video gems.
+                      There is always something new to discover.`}
+        image="sherry.jpg"
+        imageAlt="First feature alt text"
+        reverse
+        fullRounded
+      />
     </div>
   </NonFunctionalEntrance>
 );
