@@ -63,8 +63,11 @@ const page = () => (
         fullRounded
       />
       <VerticalFeatureRow
-        title="Sherry: Front End Developer"
-        description={'I\'m still thinking what to say.'}
+        title="404Found: Frontend Developer"
+        description={`Curiosity guides me.
+                      Learning fuels every step—
+                      from code experiments to quick video gems.
+                      There is always something new to discover.`}
         image="sherry.jpg"
         imageAlt="First feature alt text"
         reverse
