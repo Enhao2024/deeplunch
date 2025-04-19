@@ -12,33 +12,37 @@ const page = () => (
         <h1 className="text-3xl font-bold">Our Vision</h1>
         <div className="flex flex-col space-y-4">
           <p className="font-semibold leading-relaxed max-w-md lg:max-w-lg">
-            Modern work culture is fast-paced and demanding, yet many of us have forgotten how to truly rest.
-            You grab lunch, scroll through TikTok, maybe reply to a few messages… and before you know it, your &quot;break&quot; is over.
-            But did your brain actually rest? Probably not.
+            Modern work culture is fast-paced and demanding, yet many of us have
+            forgotten how to truly rest. You grab lunch, scroll through TikTok,
+            maybe reply to a few messages… and before you know it, your
+            &quot;break&quot; is over. But did your brain actually rest?
+            Probably not.
           </p>
           <p className="font-semibold leading-relaxed max-w-md lg:max-w-lg">
-            This project started as a personal experiment.
-            We struggled with the same problem: midday fatigue that no amount of mindless scrolling could fix.
-            After we finally found our ways and realized this was something worth sharing,
-            we built this project—not just as a tool,
-            but as a movement to help people take back their lunch breaks and make them count.
+            This project started as a personal experiment. We struggled with the
+            same problem: midday fatigue that no amount of mindless scrolling
+            could fix. After we finally found our ways and realized this was
+            something worth sharing, we built this project—not just as a tool,
+            but as a movement to help people take back their lunch breaks and
+            make them count.
           </p>
           <p className="font-semibold leading-relaxed max-w-md lg:max-w-lg">
-            Right now, DeepLunch is purely driven by passion, and we’re not focused on monetization.
-            But we’re always open to new ideas and collaborations.
-            If you believe in this vision or have something in mind, let’s talk!
+            Right now, DeepLunch is purely driven by passion, and we’re not
+            focused on monetization. But we’re always open to new ideas and
+            collaborations. If you believe in this vision or have something in
+            mind, let’s talk!
           </p>
         </div>
         <MenuLink menuName={MenuTitle.CONTACT}>
           <ShimmerButton className="shadow-2xl">
-            <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none
+            <span
+              className="whitespace-pre-wrap text-center text-sm font-medium leading-none
             tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg"
             >
               Contact Us
             </span>
           </ShimmerButton>
         </MenuLink>
-
       </div>
       <div className="divider m-16" />
       <h1 className="text-3xl font-bold">Our Team</h1>
@@ -71,6 +75,15 @@ const page = () => (
         image="sherry.jpg"
         imageAlt="First feature alt text"
         reverse
+        fullRounded
+      />
+      <VerticalFeatureRow
+        title="Rian: Front-End Developer"
+        description={`Go ahead and learn, go ahead.
+          \nIt doesn't matter anyway.
+          \nAfter that, let's play the game!`}
+        image="rian.jpg"
+        imageAlt="First feature alt text"
         fullRounded
       />
     </div>

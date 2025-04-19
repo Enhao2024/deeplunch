@@ -1,12 +1,10 @@
-import {
-  LEFT_BAR_MENU, MenuConfig, MenuTitle, TOP_BAR_MENU,
-} from '@/utils/MenuConfig';
+import { MOBILE_LEFT_BAR_MENU, MenuConfig, MenuTitle } from '@/utils/MenuConfig';
 import HamburgerProfile from './HamburgerProfile';
 import MenuLink from './MenuLink';
 import HamburgerFooterButton from './HamburgerFooterButton';
 
 function Hamburger() {
-  const renderMenu = () => [...LEFT_BAR_MENU, ...TOP_BAR_MENU].map((menu) => (
+  const renderMenu = () => [...MOBILE_LEFT_BAR_MENU].map((menu) => (
     <li key={menu.href}>
       <MenuLink
         menuName={menu.title}
